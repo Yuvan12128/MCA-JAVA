@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData; 
 import java.sql.DriverManager; 
 import java.sql.SQLException; 
-public class DatabaseMeta { 
+class DatabaseMeta { 
 public static void main(String[] args) { 
 // Database URL, username, and password (replace with your database details) 
 String url = "jdbc:mysql://localhost:3306/db"; 
