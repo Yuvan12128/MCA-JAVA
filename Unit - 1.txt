@@ -127,7 +127,97 @@ Name: Yuvan
 Age: 22
 First Mark: 85
 
-	
+Operators in Java:
+--------------------
+ 	In Java, operators are special symbols that perform specific operations on variables and values.
+ 	
+1. Arithmetric Operators:
+	Used for basic mathematical operations.
+-------------------------------------------------------------------
+| Operator | Description         | Example (`a=10, b=5`) | Result |
+| -------- | ------------------- | --------------------- | ------ |
+| `+`      | Addition            | `a + b`               | 15     |
+| `-`      | Subtraction         | `a - b`               | 5      |
+| `*`      | Multiplication      | `a * b`               | 50     |
+| `/`      | Division            | `a / b`               | 2      |
+| `%`      | Modulus (remainder) | `a % b`               | 0      |
+--------------------------------------------------------------------
+
+2. Relational Operators:
+	Used to compare tow values(returns true of false).
+------------------------------------------------------------------------
+| Operator | Description              | Example (`a=10, b=5`) | Result |
+| -------- | ------------------------ | --------------------- | ------ |
+| `==`     | Equal to                 | `a == b`              | false  |
+| `!=`     | Not equal to             | `a != b`              | true   |
+| `>`      | Greater than             | `a > b`               | true   |
+| `<`      | Less than                | `a < b`               | false  |
+| `>=`     | Greater than or equal to | `a >= b`              | true   |
+| `<=`     | Less than or equal to    | `a <= b`              | false  |
+-------------------------------------------------------------------------
+
+3. Logical Operators:
+	Used to compare tow values (returns true or false).
+-----------------------------------------------------------------
+| Operator | Description | Example (`a=10, b=5, c=20`) | Result |
+| -------- | ----------- | --------------------------- | ------ |
+| `&&`     | Logical AND | `(a > b) && (a < c)`        | true   |
+| `\|\|`   | Logical OR  | `(a > b) \|\| (a > c)`      | true   |
+| `!`      | Logical NOT | `!(a > b)`                  | false  |
+------------------------------------------------------------------
+
+4. Assignment Operators:
+	Used to assign values to variables.
+
+-------------------------------------------------
+| Operator | Example (`a=10`) | Meaning       |
+| -------- | ---------------- | ------------- |
+| `=`      | `a = 5`          | Assign 5 to a |
+| `+=`     | `a += 5`         | `a = a + 5`   |
+| `-=`     | `a -= 5`         | `a = a - 5`   |
+| `*=`     | `a *= 5`         | `a = a * 5`   |
+| `/=`     | `a /= 5`         | `a = a / 5`   |
+| `%=`     | `a %= 5`         | `a = a % 5`   |
+-------------------------------------------------
+
+5. Unary Operators
+	Operate on a single operand.
+----------------------------------------------------------------
+| Operator | Description   | Example (`a=10`) | Result       |
+| -------- | ------------- | ---------------- | ------------ |
+| `+`      | Positive sign | `+a`             | 10           |
+| `-`      | Negative sign | `-a`             | -10          |
+| `++`     | Increment     | `++a` (pre)      | 11           |
+|          |               | `a++` (post)     | 10 (then 11) |
+| `--`     | Decrement     | `--a` (pre)      | 9            |
+|          |               | `a--` (post)     | 10 (then 9)  |
+| `!`      | Logical NOT   | `!(a > 5)`       | false        |
+---------------------------------------------------------------
+
+6. Bitwise Operators:
+	Work at the binary(bit) level.
+----------------------------------------------------------------------
+| Operator | Description          | Example (`a=5, b=3`)    | Result |
+| -------- | -------------------- | ----------------------- | ------ |
+| `&`      | Bitwise AND          | `a & b` (0101 & 0011)   | 1      |
+| `\|`     | Bitwise OR           | `a \| b` (0101 \| 0011) | 7      |
+| `^`      | Bitwise XOR          | `a ^ b`                 | 6      |
+| `~`      | Bitwise NOT          | `~a`                    | -6     |
+| `<<`     | Left shift           | `a << 1`                | 10     |
+| `>>`     | Right shift          | `a >> 1`                | 2      |
+| `>>>`    | Unsigned right shift | `a >>> 1`               | 2      |
+----------------------------------------------------------------------
+
+7. Ternary Operator:
+	A short form of if-else.
+String result = (a > b) ? "A is big" : "B is big";
+
+8. Instance of Operator:
+
+if (obj instanceof String) {
+    System.out.println("It's a String");
+}
+
 	
 
 
