@@ -1,0 +1,90 @@
+Java Data Types:
+-----------------
+	java is strongly types, meaning you must declare a variable's type before using it.
+
+Primitive Data types
+--------------------
+| Data Type   | Size (bits) | Range                                                   |
+| ----------- | -----------  -------------------------------------------------------  |
+| **byte**    | 8           | -128 to 127                                             |
+| **short**   | 16          | -32,768 to 32,767                                       |
+| **int**     | 32          | -2,147,483,648 to 2,147,483,647                         |
+| **long**    | 64          | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+| **float**   | 32          | 3.4e−038 to 3.4e+038 (approx.)                          |
+| **double**  | 64          | 1.7e−308 to 1.7e+308 (approx.)                          |
+| **char**    | 16          | 0 to 65,535 (Unicode characters)                        |
+| **boolean** | 1 (logical) |  true or false                                          |
+------------------------------------------------------------------------------------------
+
+Non-Primitive Data Types:
+-------------------------
+String
+Arrays
+Class, Objects, Interfaces
+
+Variables in Java:
+-----------------
+
+types variableName = value; //Declaration + Initialization
+
+Types of Variables in Java:
+---------------------------
+
+1. Local Variables - Declared inside methods, constructors, or clocks.
+2. instance Variables - Declared in a class but outside methods(each object gets its own copy).
+3. Static variables - Declared with Static, shared among all objects.
+
+Example:
+---------
+
+class Example{
+static int static_Var=100; //static variable
+int instance_Var = 10;
+
+public void method(){
+int local_Var = 10;  //local variable
+System.out.print(Local_Var);
+
+}
+
+}
+
+Arrays in Java:
+---------------
+	An array stores multiple values of the same type in a single variable.
+	
+	Declaration:
+		int[] number; // preferred
+		int numbers[]; //also valid
+	initialization:
+		int[] numbers = {10,20,30}; //direct initialization
+		int[] values = new int[5];  //default values = 0
+		values [0] = 100;           // assigning value
+	Accessing Elements:
+		System.out.print(number[0]); // first element
+
+Example Program:
+-------------------
+public class Main {
+    public static void main(String[] args) {
+        // Variables
+        int age = 22;
+        String name = "Yuvan";
+
+        // Array
+        int[] marks = {85, 90, 78};
+
+        // Output
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("First Mark: " + marks[0]);
+    }
+}
+
+Output:
+-------
+Name: Yuvan
+Age: 22
+First Mark: 85
+
+

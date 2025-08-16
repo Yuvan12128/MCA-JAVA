@@ -1,0 +1,20 @@
+Types of Java Applications:
+--------------------------
+
+    Standalone Applications – Run on your computer.
+    Example: Calculator, Media Player.
+
+    Web Applications – Run on a server and open in a browser.
+    Example: Online Banking, Amazon.
+
+    Enterprise Applications – Big company systems.
+    Example: ERP(Enterprise Resource Planning), CRM(Customer Relationship Management).
+
+    Mobile Applications – Apps for mobile phones.
+    Example: Whats App, Instagram.
+
+    Scientific Applications – For research and calculations.
+    Example: MATLAB back-end.
+
+    Embedded Applications – For small devices.
+    Example: Smart cards, Set-top boxes.

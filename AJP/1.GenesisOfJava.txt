@@ -1,0 +1,22 @@
+Genesis of Java:
+----------------
+
+    Who created? James Gosling at Sun Micro-systems in 1991.
+
+    First name: Oak → later changed to Java (name from coffee).
+
+    Main goals:
+
+        Easy to learn
+
+        Object-Oriented
+
+        Secure
+
+        Works on any platform (Write Once, Run Anywhere)
+
+        Strong and reliable
+
+
+    
+

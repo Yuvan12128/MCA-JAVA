@@ -1,0 +1,70 @@
+
+Utility Classes:
+-----------------
+
+	1. Usually declared as final(so they cannot be subclassed).
+	2. Have private constructor(to prevent object creation).
+	3. Contain only static methods and constants.
+	4. Provide reusable helper functions.
+
+Common Utility Classes in java
+---------------------------------
+
+1. java.lang.Math
+-> provides mathematical functions.
+int x = Math.max(10, 20);    // returns 20
+double y = Math.sqrt(25);    // returns 5.0
+double z = Math.pow(2, 3);   // returns 8.0
+
+2.java.util.Arrays
+Provides methods for array manipulation.
+int[] arr = {3, 1, 4, 2};
+Arrays.sort(arr);  
+System.out.println(Arrays.toString(arr)); // [1, 2, 3, 4]
+
+3.java.util.Collections
+Provides methods for collection objects like List, Set.
+List<Integer> list = Arrays.asList(5, 3, 8, 1);
+Collections.sort(list);
+System.out.println(list); // [1, 3, 5, 8]
+
+4.java.util.Objects
+Provides utility methods for working with objects.
+String str = null;
+System.out.println(Objects.isNull(str));  // true
+System.out.println(Objects.requireNonNull("Java")); // Java
+
+5.java.util.UUID
+-> Generates universally unique identifiers.
+String uniqueID = UUID.randomUUID().toString();
+System.out.println(uniqueID);
+
+6.java.util.concurrent.TimeUnit
+used for time conversions.
+long minutes = TimeUnit.HOURS.toMinutes(2); // 120
+
+7.java.util.Random
+Generates random numbers.
+Random rand = new Random();
+int num = rand.nextInt(100);  // Random number between 0 and 99
+
+Example: custom Utility Class
+
+You can also create your own utility class:
+final class StringUtils {
+    // Private constructor to prevent instantiation
+    private StringUtils() {}
+
+    public static boolean isNullOrEmpty(String str) {
+        return str == null || str.isEmpty();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(StringUtils.isNullOrEmpty(""));   // true
+        System.out.println(StringUtils.isNullOrEmpty("Java")); // false
+    }
+}
+✅ In short: Utility classes in Java are helper classes with static methods that simplify common programming tasks (Math, Arrays, Collections, etc.).
+
