@@ -1,0 +1,86 @@
+Control Statements:
+------------------
+
+Decision-making Statements
+
+if
+
+int age = 20;
+if(age >= 18) {
+    System.out.println("Eligible to vote");
+}
+
+if-else 
+
+int marks = 30;
+if(marks >= 35)
+    System.out.println("Pass");
+else
+    System.out.println("Fail");
+
+if-else-if Ladder
+
+int marks = 80;
+if(marks >= 90) System.out.println("Grade A");
+else if(marks >= 75) System.out.println("Grade B");
+else if(marks >= 50) System.out.println("Grade C");
+else System.out.println("Fail");
+
+switch
+
+int day = 3;
+switch(day) {
+    case 1: System.out.println("Monday"); break;
+    case 2: System.out.println("Tuesday"); break;
+    case 3: System.out.println("Wednesday"); break;
+    default: System.out.println("Invalid");
+}
+
+2. Looping Statements
+for Loop
+for(int i=1; i<=5; i++) {
+    System.out.println(i);
+}
+while Loop
+int i = 1;
+while(i <= 5) {
+    System.out.println(i);
+    i++;
+}
+do-while Loop
+
+int i = 1;
+do {
+    System.out.println(i);
+    i++;
+} while(i <= 5);
+
+3. Jump Statements
+break
+for(int i=1; i<=5; i++) {
+    if(i == 3) break;
+    System.out.println(i);
+}
+// Output: 1 2
+
+continue
+
+for(int i=1; i<=5; i++) {
+    if(i == 3) continue;
+    System.out.println(i);
+}
+// Output: 1 2 4 5
+
+return
+
+public int add(int a, int b) {
+    return a + b;
+}
+
+✅ Summary in one line:
+
+if / switch → Decision
+
+for / while / do-while → Repetition
+
+break / continue / return → Jump
