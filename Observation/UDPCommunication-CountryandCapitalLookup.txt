@@ -1,0 +1,102 @@
+Program No: 3
+-------------
+
+Date: …………………
+Program Name: UDP Communication – Country and Capital Lookup
+
+AIM:
+-----
+To develop a Java program for UDP communication where the client sends the name of a country, and the server returns the capital of that country.
+
+Code:
+UDPServer.java
+---------------
+import java.net.*;
+import java.util.HashMap;
+
+public class UDPServer {
+    public static void main(String[] args) throws Exception {
+        DatagramSocket serverSocket = new DatagramSocket(9876);
+
+        // Store some countries and their capitals in a HashMap
+        HashMap<String, String> countryCapitals = new HashMap<>();
+        countryCapitals.put("India", "New Delhi");
+        countryCapitals.put("USA", "Washington, D.C.");
+        countryCapitals.put("Germany", "Berlin");
+        countryCapitals.put("France", "Paris");
+
+        byte[] receiveData = new byte[1024];
+        byte[] sendData = new byte[1024];
+
+        System.out.println("Server is running and waiting for client request...");
+
+        while (true) {
+            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            serverSocket.receive(receivePacket);
+
+            String country = new String(receivePacket.getData(), 0, receivePacket.getLength());
+            System.out.println("Received country: " + country);
+
+            // Find the capital of the country
+            String capital = countryCapitals.getOrDefault(country, "Capital not found");
+            sendData = capital.getBytes();
+
+            InetAddress clientIPAddress = receivePacket.getAddress();
+            int port = receivePacket.getPort();
+
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientIPAddress, port);
+            serverSocket.send(sendPacket);
+        }
+    }
+}
+
+UDPClient.java
+--------------
+
+import java.net.*;
+import java.util.Scanner;
+
+public class UDPClient {
+    public static void main(String[] args) throws Exception {
+        DatagramSocket clientSocket = new DatagramSocket();
+        InetAddress IPAddress = InetAddress.getByName("localhost");
+
+        byte[] sendData = new byte[1024];
+        byte[] receiveData = new byte[1024];
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the name of a country: ");
+        String country = scanner.nextLine();
+
+        sendData = country.getBytes();
+        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+        clientSocket.send(sendPacket);
+
+        DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+        clientSocket.receive(receivePacket);
+
+        String capital = new String(receivePacket.getData(), 0, receivePacket.getLength());
+        System.out.println("Capital of " + country + " is: " + capital);
+
+        clientSocket.close();
+        scanner.close();
+    }
+}
+
+Observation:
+------------
+When the server program was executed, it displayed:
+>>Server is running and waiting for client request...
+Server is running and waiting for client request...
+>>When the client entered a country name, e.g., India, the server printed:
+Received country: India
+>>The client displayed the corresponding capital city:
+Enter the name of a country: India
+Capital of India is: New Delhi
+>>If an unknown country was entered, the server returned:
+Capital not found
+
+Result:
+-------
+
+Thus, a UDP client–server application was successfully implemented in Java where the client sends a country name and the server responds with its capital city.
