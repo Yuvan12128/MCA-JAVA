@@ -1,0 +1,76 @@
+Program No: 2
+
+Date: …………………
+Program Name: Date and Time using Client–Server in Java
+
+AIM:
+
+To write a Java program to implement a Client–Server application where the server sends the current date and time to the client using sockets.
+
+Code:
+(a) DateServer.java
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateServer {
+    public static void main(String[] args) {
+        try {
+            ServerSocket serverSocket = new ServerSocket(6789);
+            System.out.println("Server is waiting for client on port 6789...");
+
+            Socket connectionSocket = serverSocket.accept();
+            DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
+
+            String currentTime = new SimpleDateFormat("(yyyy/MM/dd)(HH:mm:ss)").format(new Date());
+            outToClient.writeBytes("Current Date and Time: " + currentTime + "\n");
+
+            connectionSocket.close();
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+(b) DateClient.java
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+public class DateClient {
+    public static void main(String[] args) {
+        try {
+            Socket clientSocket = new Socket("localhost", 6789);
+
+            BufferedReader inFromServer = new BufferedReader(
+                new InputStreamReader(clientSocket.getInputStream())
+            );
+
+            String serverResponse = inFromServer.readLine();
+            System.out.println("From Server: " + serverResponse);
+
+            clientSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+Observation:
+
+The program was successfully executed.
+>>On running the server, it displayed the message:
+Server is waiting for client on port 6789...
+
+>>On running the client, it connected to the server and displayed the current date and time:
+From Server: Current Date and Time: (2025/08/19)(06:55:44)
+
+Result:
+
+Thus, a client–server application was implemented in Java successfully to send the current date and time from the server to the client using sockets.
